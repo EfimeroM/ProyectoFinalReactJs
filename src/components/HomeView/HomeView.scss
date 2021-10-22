@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap');
+.header-title{
+    p{
+        font-family: 'Source Sans Pro', sans-serif;
+        font-size: 50px;
+        font-weight: 900;
+        padding: 4vw 1vw 1vw 1vw;
+    }
+}
+.text-home{
+    padding: 4vw 1vw;
+    p{
+        font-size: 25px;
+    }
+}
+.header-game{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    .header{
+        width: 33.33%;
+        border: 5px solid black;
+        img{
+            width: 100%;
+        }
+    }
+}

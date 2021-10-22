@@ -1,0 +1,23 @@
+.bg{
+    background-color: red;
+    width: 100%;
+    background-position: center;
+    background-size: 170%;
+    background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+}
+.bg:before{
+    content:'';
+	position: absolute;
+        top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.493);
+    backdrop-filter: blur(0.5px);
+}
+.text-item{
+    color: #fff;
+	position: relative
+}
