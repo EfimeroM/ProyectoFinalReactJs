@@ -3,9 +3,6 @@ TopTier se trata de una tienda en la que se recopilan tanto juegos pagos como gr
 # Sobre la estructuracion y el código
 Lo que podria destacar seria el helper listarArray.js ya que esta hecho tan genericamente que me permitio listar los juegos, los detalles, y tambien algo que esta terminado pero no lo puse por respeto a las consignas que es el homeview que integra a HeaderGameListContainer que es una portada donde salen 3 juegos a modo de banner. El Loading se separo en un componente aparte. Tambien se bajo el delay de la promise para que no se haga tan cansado la navegación.
 
-![image](https://github.com/EfimeroM/ProyectoFinalReactJs/blob/main/src/media/TopTierNavegacion.gif)
-
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
