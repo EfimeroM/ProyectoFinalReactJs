@@ -10,6 +10,7 @@ import {
 import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import { CartView } from "./components/CartView/CartView";
+import { Navhistory } from "./components/NavHistory/Navhistory";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <CartProvider>
         <BrowserRouter>
           <NavBar />
+          <Navhistory />
           <Switch>
             <Route exact path="/">
               <ItemListContainer />

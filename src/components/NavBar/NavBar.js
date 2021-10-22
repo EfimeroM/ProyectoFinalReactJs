@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink} from 'react-router-dom'
-import { AiOutlineShoppingCart } from "react-icons/ai"
 import { ImXing2 } from "react-icons/im"
 import {Navbar, Nav, NavDropdown,Container} from 'react-bootstrap'
 import './NavBar.scss'
+import { CartWidget } from './CartWidget'
 
 export const NavBar = () => {
+
     return (
 		<header>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" fixed="top">
@@ -30,7 +31,9 @@ export const NavBar = () => {
               <Nav.Link><Link className="link" to="/about-us">Acerca De</Link></Nav.Link>
             </Nav>
             <Nav>
-              <NavLink activeClassName={'activeLink'} className="cart" exact to="/cart"><AiOutlineShoppingCart className="icono"/></NavLink>
+              <NavLink activeClassName={'activeLink'} className="cart link" exact to="/cart">
+                <CartWidget />
+              </NavLink>
             </Nav>
           </Navbar.Collapse>
         </Container>
