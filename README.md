@@ -28,6 +28,17 @@ You will also see any lint errors in the console.
 
 Permite estilar la web con el lenguaje de hojas de estilo Sass
 
+### `npm install react-bootstrap@next bootstrap@5.1.1`
+
+Permite usar boostrap en el proyecto
+
+### `npm install react-icons --save`
+
+Permite usar iconos solo importandolos
+
+### `npm install react-router-dom`
+
+Maneja las rutas del dom de manera mas eficiente
 
 ### `npm test`
 
