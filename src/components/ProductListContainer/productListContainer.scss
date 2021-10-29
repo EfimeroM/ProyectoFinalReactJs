@@ -1,0 +1,49 @@
+.card-category{
+    display: flex;
+    padding: 10vh 2vh
+}
+.item-detail-container{
+    padding: 7vh 1vh;
+    display: flex;
+    .datos-item{
+        width: 30%;
+        height: 100%;
+        border: 1px solid black;
+        img{
+            width: 100%;
+        }
+        .datos{
+            p{
+                font-size: 18px;
+                padding: 1vh;
+            }
+        }
+    }
+    .detalles-compra{
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 100%;
+        .detalles{
+            font-size: 22px;
+            padding: 0 3vh;
+        }
+        .compra{
+            display: flex;
+            flex-direction: column;
+            padding: 5vh 3vh;
+            width: 25%;
+            .button{
+                margin-top: 4vh;
+                background: rgb(98, 173, 54);
+                border: none;
+                color: rgb(236, 234, 234);
+                font-size: 20px;
+                padding: 1vh 1vh;
+            }
+            .button:hover{
+                border: 2px solid rgb(7, 100, 53);
+            }
+        }
+    }
+}

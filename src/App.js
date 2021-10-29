@@ -1,5 +1,4 @@
 import NavBar from "./components/NavBar/NavBar";
-import { ItemListContainer } from "./components/ItemListContainer/ItemListContainer";
 import './App.scss'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {
@@ -7,10 +6,12 @@ import {
   Route,
   Switch
 } from 'react-router-dom'
-import { ItemDetailContainer } from "./components/ItemDetailContainer/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import { CartView } from "./components/CartView/CartView";
 import { Navhistory } from "./components/NavHistory/Navhistory";
+import { CompanyList } from "./components/CompanyBanner/CompanyList";
+import { Company } from "./components/Company/Company";
+import { ProductListContainer } from "./components/ProductListContainer/ProductListContainer";
 
 function App() {
   return (
@@ -21,15 +22,17 @@ function App() {
           <Navhistory />
           <Switch>
             <Route exact path="/">
-              <ItemListContainer />
+              <CompanyList />
             </Route>
 
+            <Route exact path="/company/:companyName">
+              <Company />
+            </Route>
+            <Route exact path="/company/:companyName/:productId">
+              <ProductListContainer />
+            </Route>
             <Route exact path="/category/:categoryId">
-              <ItemListContainer rutaImg="../"/>
-            </Route>
-
-            <Route exact path="/detail/:detailId">
-              <ItemDetailContainer />     
+              <ProductListContainer />
             </Route>
 
             <Route exact path="/cart">

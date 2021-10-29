@@ -1,0 +1,49 @@
+.company-name{
+    grid-area: title;
+}
+.company-type{
+    grid-area: type;
+}
+.company-img{
+    grid-area: img;
+    border-radius: 20px;
+}
+.company-shipments{
+    grid-area: shipments;
+}
+.company-location{
+    grid-area: location;
+}
+.company-gallery{
+    grid-area: gallery;
+}
+.header-company{
+    width: 100%;
+    .banner{
+        width: 100%;
+        background-position: center;
+        background-size: 170%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+    }
+    .header{
+        border: 1px solid black;
+        padding: 100px;
+        display: grid;
+        grid-template-areas:
+        "img title gallery"
+        "img type gallery"
+        "img shipments gallery"
+        "img location gallery"
+        ;
+        grid-template-columns: 15% 45% 40%;
+        color: black;
+    }
+}
+.body-company{
+    padding: 10vh 0vw;
+    .card-product{
+        display: flex;
+    }
+}

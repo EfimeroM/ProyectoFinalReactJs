@@ -14,7 +14,7 @@ export const NavBar = () => {
           <Navbar.Brand>
             <Link to="/" className="link">
               <ImXing2 className="icono"/>
-              TopTier Juegos
+              ShopCard
             </Link>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -22,9 +22,9 @@ export const NavBar = () => {
             <Nav className="me-auto">
               <NavDropdown title="Categorias" id="collasible-nav-dropdown" >
                 <div className="sub-menu">
-                  <NavLink activeClassName={'activeLink'} className="sub-nav-link" exact to="/category/accion">Accion</NavLink>
-                  <NavLink activeClassName={'activeLink'} className="sub-nav-link" exact to="/category/simulacion">Simulacion</NavLink>
-                  <NavLink activeClassName={'activeLink'} className="sub-nav-link" exact to="/category/moba">Moba</NavLink>
+                  <NavLink activeClassName={'activeLink'} className="sub-nav-link" exact to="/category/remeras">Remeras</NavLink>
+                  <NavLink activeClassName={'activeLink'} className="sub-nav-link" exact to="/category/abrigos">Abrigos</NavLink>
+                  <NavLink activeClassName={'activeLink'} className="sub-nav-link" exact to="/category/camisas">Camisas</NavLink>
                 </div>
               </NavDropdown>
               <Nav.Link><Link className="link" to="/releases">Proximos Lanzamientos</Link></Nav.Link>

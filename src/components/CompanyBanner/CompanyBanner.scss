@@ -1,0 +1,66 @@
+.company-name{
+    grid-area: title;
+}
+.company-type{
+    grid-area: type;
+}
+.company-img{
+    grid-area: img;
+    border-radius: 20px;
+}
+.company-shipments{
+    grid-area: shipments;
+}
+.company-location{
+    grid-area: location;
+}
+.company-gallery{
+    grid-area: gallery;
+}
+.content-company-banner{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 100px 100px 50px;
+    .company-banner{
+        width: 80%;
+        margin-top: 50px;
+        padding: 10px;
+        border: 2px solid black;
+        border-radius: 20px;
+        display: grid;
+        grid-template-areas:
+        "img title gallery"
+        "img type gallery"
+        "img shipments gallery"
+        "img location gallery"
+        ;
+        grid-template-columns: 15% 45% 40%;
+        box-shadow: 14px 10px 7px -4px rgba(0,0,0,0.71);
+        -webkit-box-shadow: 14px 10px 7px -4px rgba(0,0,0,0.71);
+        -moz-box-shadow: 14px 10px 7px -4px rgba(0,0,0,0.71);
+        transition: 0.4s;
+        color: black;
+        .cb{
+            border-bottom: 1px solid rgb(66, 66, 66);
+            padding: 5px;
+        }
+        .front{
+	        position: relative;
+        }
+        .company-gallery{
+            
+            box-sizing: content-box;
+            .gallery{
+                width: 33.33%;
+                height: 97%;
+                border: 2px solid rgb(93, 93, 93);
+            }
+        }
+    }
+    .company-banner:hover{
+        cursor: pointer;
+        box-shadow: none;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+    }
+}

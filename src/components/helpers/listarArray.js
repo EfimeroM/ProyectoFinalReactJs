@@ -5,7 +5,7 @@ export const listarArray = (list) => {
         setTimeout(()=>{
             resolve(list)
             // reject("Rechazado")
-        }, 500)
+        }, 1000)
 
     })
 }

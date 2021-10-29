@@ -1,14 +1,13 @@
 import React from 'react'
 import { Spinner } from 'react-bootstrap'
-import './loading.css'
+import './loading.scss'
 
 
 export const Loading = () => {
 
     return(
         <div className="loading">
-            <Spinner animation="border" />
-            <p>Cargando</p>
+            <Spinner animation="grow" variant="danger"  />
         </div>
     )
 }

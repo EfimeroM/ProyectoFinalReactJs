@@ -1,3 +1,9 @@
+.delete{
+    display: none;
+}
+.cart-widget{
+    display: block;
+}
 .bg{
     background-color: red;
     width: 100%;
@@ -10,7 +16,7 @@
 .bg:before{
     content:'';
 	position: absolute;
-        top: 0;
+    top: 0;
 	bottom: 0;
 	left: 0;
 	right: 0;

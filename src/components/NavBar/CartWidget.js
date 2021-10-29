@@ -6,8 +6,8 @@ export const CartWidget = () => {
     const {calculateQuantity} = useContext(CartContext)
 
     return (
-        <>
-            <AiOutlineShoppingCart className="icono"/>{calculateQuantity()}
-        </>
+        <div className={calculateQuantity() === 0 ? "delete" : "cart-widget"}>
+            <AiOutlineShoppingCart className="icono" />{calculateQuantity()}
+        </div>
     )
 }
