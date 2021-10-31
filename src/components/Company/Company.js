@@ -1,27 +1,34 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router'
-import { listarArray } from '../helpers/listarArray'
-import { listCompany } from '../data/company'
 import { CompanyHeader } from './CompanyHeader'
 import './company.scss'
 import { ProductListContainer } from '../ProductListContainer/ProductListContainer'
 import { Loading } from '../loading/loading'
+import { getFirestore } from '../../firebase/config'
 
 export const Company = () => {
     const [company, setCompany] = useState([])
     const [loading, setLoading] = useState(false)
     const {companyName} = useParams()
 
-    useEffect(() => {
+    useEffect(()=>{
         setLoading(true)
-        listarArray(listCompany)
-        .then((res) =>{
-            setCompany( res.filter( game => String(game.name) === String(companyName)) )
-            setLoading(false)
-        })
-        .catch((err)=>console.log(err))
+        const db = getFirestore()
+        const company = db.collection('company').where('name', '==', String(companyName))
+
+        company.get()
+            .then((response) => {
+                const newItems = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()}
+                })
+                setCompany(newItems)
+            })
+            .catch( err => console.log(err))
+            .finally(() => {
+                setLoading(false)}
+            )
+        
     }, [])
-    
 
     return (
         <>

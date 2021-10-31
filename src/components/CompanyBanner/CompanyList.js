@@ -1,22 +1,30 @@
 import React, { useEffect, useState } from 'react'
-import { listCompany } from '../data/company'
 import { Loading } from '../loading/loading'
-import "./CompanyBanner.scss"
 import { CompanyBanner } from './CompanyBanner'
-import { listarArray } from '../helpers/listarArray'
+import { getFirestore } from '../../firebase/config'
+import "./CompanyBanner.scss"
 
 export const CompanyList = () => {
     const [company, setCompany] = useState([])
     const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
+    useEffect(()=>{
         setLoading(true)
-        listarArray(listCompany)
-        .then( (res)=>{
-            setCompany(res)
-            setLoading(false)
-        })
-        .catch((err)=>console.log("error CompanyList"))
+        const db = getFirestore()
+        const company = db.collection('company')
+
+        company.get()
+            .then((response) => {
+                const newItems = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()}
+                })
+                setCompany(newItems)
+            })
+            .catch( err => console.log(err))
+            .finally(() => {
+                setLoading(false)}
+            )
+        
     }, [])
 
     return (

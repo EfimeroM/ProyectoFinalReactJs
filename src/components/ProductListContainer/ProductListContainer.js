@@ -1,45 +1,67 @@
 import React, {useState, useEffect} from 'react'
-import { listarArray } from '../helpers/listarArray'
-import { listProducts } from '../data/products'
 import { BodyCompany } from '../Company/BodyCompany'
 import { useParams } from 'react-router-dom'
-import { ProductDetail } from '../ProductDetail/ProductDetail'
 import './productListContainer.scss'
 import { Loading } from '../loading/loading'
+import { getFirestore } from '../../firebase/config'
+import { ProductDetail } from '../ProductDetail/ProductDetail'
 
 export const ProductListContainer = ({name}) => {
 
-    const [product, setProduct] = useState([])
+    const [products, setProducts] = useState([])
     const [loading, setLoading] = useState(false)
     const {productId} = useParams()
     const {categoryId} = useParams()
 
-    useEffect(() => {
+    console.log(productId)
+
+    useEffect(()=>{
         setLoading(true)
-        listarArray(listProducts)
-        .then((res) =>{
-            if(productId){
-                setProduct( res.filter( pr => pr.id === Number(productId)) ) 
-            }else if(categoryId){
-                setProduct( res.filter( pr => String(pr.category) === String(categoryId)) )
-            }else{
-                setProduct( res.filter( pr => String(pr.comp) === String(name)) )
-            }
-            setLoading(false)
-        })
-        .catch((err)=>console.log(err))
-    }, [categoryId])
+        const db = getFirestore()
+        const productos = db.collection('products')
+        const item = productId ? productos.doc(productId)
+                            :categoryId? db.collection('products').where('category', '==', categoryId)
+                            : db.collection('products').where('comp', '==', name)
+        if(productId){
+            item.get()
+            .then((doc) => {
+                setProducts({
+                    id: doc.id,
+                    ...doc.data()
+                })
+            })
+            .catch( err => console.log(err))
+            .finally(() => {
+                setLoading(false)}
+            )
+        }else{
+            item.get()
+            .then((response) => {
+                const newItems = response.docs.map((doc) => {
+                    return {id: doc.id, ...doc.data()}
+                })
+                setProducts(newItems)
+            })
+            .catch( err => console.log(err))
+            .finally(() => {
+                setLoading(false)}
+            )
+        }
+    }, [categoryId,productId])
+    
+    
+
     return(
         <div className={`card-product ${categoryId && "card-category"}`} >
             {
                 loading?
                 <Loading />
                 :productId?
-                product.map((product) => <ProductDetail {...product} key={product.id} />)
+                <ProductDetail {...products} key={products.id} />
                 :categoryId?
-                product.map((product) => <BodyCompany {...product} key={product.id} />) 
+                products.map((product) => <BodyCompany {...product} key={product.id} />) 
                 :   
-                product.map((product) => <BodyCompany {...product} key={product.id} />) 
+                products.map((product) => <BodyCompany {...product} key={product.id} />) 
             }
         </div>
     )

@@ -19,7 +19,7 @@ export const ProductDetail = ({id,comp,name, description, price, img, size, stoc
             <div className="item-detail-container">
                 <div className="datos-item">
                     <div className="cabecera">
-                        <img src={`../../${img}`} alt={name}/>
+                        <img src={img} alt={name}/>
                     </div>
                     <div className="datos">
                         <hr/>

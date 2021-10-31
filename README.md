@@ -4,7 +4,7 @@ ShopCard es una web que permite a las marcas/emprendimientos de ropa tener su pr
 # Sobre la estructuracion y el código
 Lo que podria destacar seria el helper listarArray.js ya que esta hecho tan genericamente que me permitio listar los productos. El Loading se separo en un componente aparte. Tambien se bajo el delay de la promise para que no se haga tan cansado la navegación.
 
-# Update Carrito
+# Update FireBase
 
 ![image](https://github.com/EfimeroM/ProyectoFinalReactJs/blob/main/src/media/ShopCard.gif)    
 
@@ -24,3 +24,6 @@ Permite usar iconos solo importandolos
 
 Maneja las rutas del dom de manera mas eficiente
 
+### `npm install firebase@8.10.0`
+
+Crea una base de datos y muestra la informacion en tu web

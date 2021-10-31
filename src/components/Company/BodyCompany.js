@@ -6,7 +6,7 @@ export const BodyCompany = ({id,comp,name, description, price, img, size}) => {
 
     return (
         <Card style={{ width: '18rem' }} className="mx-5">
-            <Card.Img variant="top" src={`../../${img}`} />
+            <Card.Img variant="top" src={img} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>{description}</Card.Text>
