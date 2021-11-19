@@ -7,11 +7,10 @@ import './navHistory.scss'
 
 export const Navhistory = () => {
     const {goBack, push} = useHistory()
-    
     return (
         <div className="nav">
-                <Button variant="secondary" className="button" onClick={() => goBack()}><BsArrow90DegLeft /></Button>
-                <Button variant="secondary" className="button" onClick={() => push("/")}><AiOutlineHome /></Button>
-            </div>
+            <Button variant="secondary" className="button" onClick={() => goBack()}><BsArrow90DegLeft /></Button>
+            <Button variant="secondary" className="button" onClick={() => push("/")}><AiOutlineHome /></Button>
+        </div>
     )
 }

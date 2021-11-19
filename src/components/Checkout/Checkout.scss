@@ -1,0 +1,55 @@
+#checkout{
+    h2{
+        padding: 50px 10px;
+    }
+    .checkout-body{
+        display: flex;
+        #formulario-checkout{
+            width: 45%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            small{
+                color: red
+            }
+        }
+        .checkout-o{
+            width: 10%;
+            position: relative;
+            p{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+            }
+        }
+        .checkout-target{
+            position: relative;
+            width: 45%;
+            .target{
+                padding: 10px;
+                position: absolute;
+                top:20%;
+                width: 70%;
+                margin-left: 15%;
+                border: 2px solid black;
+                cursor: pointer;
+                transition-duration: 0.2s;
+                border-radius: 5px;
+                h5{
+                    padding: 10px 0;
+                }
+                p{
+                    padding: 10px;
+                    color: rgba(0, 0, 0, 0.452);
+                }
+            }
+            .target:hover{
+                border: 1px solid rgb(185, 185, 185);
+                box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+                -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+                transition-duration: 0.2s;
+            }
+        }
+    }
+}

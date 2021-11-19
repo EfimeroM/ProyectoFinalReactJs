@@ -25,10 +25,10 @@ export const Company = () => {
             })
             .catch( err => console.log(err))
             .finally(() => {
-                setLoading(false)}
-            )
+                setLoading(false)
+            })
         
-    }, [])
+    }, [companyName])
 
     return (
         <>

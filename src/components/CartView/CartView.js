@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Button } from 'react-bootstrap'
 import { BsFillTrashFill } from 'react-icons/bs'
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/CartContext'
 import { CartItem } from './CartItem'
 
@@ -11,7 +12,7 @@ export const CartView = () => {
     return (
         <div className="my-5 mx-5">
         {
-            calculateQuantity()!=0?
+            calculateQuantity()!==0?
             <>
                 <h2>Resumen de compra</h2>
                 <hr/>
@@ -25,7 +26,7 @@ export const CartView = () => {
                 <hr/>
                 <h3>Precio Total: ${calculatePrice()}</h3>    
                 <hr />
-                <Button className="btn btn-success">Comprar</Button>
+                <Link to="/checkout" className="btn btn-success">Terminar mi compra</Link>
                 <Button className="btn btn-danger mx-4" onClick={deleteCart}>Vaciar carrito <BsFillTrashFill/></Button>                
             </>
             :

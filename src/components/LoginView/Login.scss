@@ -1,0 +1,41 @@
+#login-content{
+    display: flex;
+    width: 100%;
+    .nav{
+        width: 50%;
+    }
+    .header-login{
+        h2{
+            padding: 100px 0 0 10px;
+        }
+    }
+    .body-login{
+        h3{
+            padding: 40px 10px;
+        }
+    }
+    #login{
+        width: 350px;
+        height: 100vh;
+        border-right: 2px solid black;
+    }
+    #register{
+        width: 350px;
+        height: 100vh;
+        border-right: 2px solid black;
+        .name-surname{
+            display: flex;
+            .box{
+                width: 50%;
+                padding-right:10px;
+                #surname{
+                    width: 100%;
+                }
+                #name{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+}
